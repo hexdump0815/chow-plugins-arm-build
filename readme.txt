@@ -18,6 +18,8 @@ cp -a build/ChowMatrix_artefacts/VST3/ChowMatrix.vst3 /usr/local/lib/vst3
 # mv /usr/local/lib/vst3/ChowMatrix.vst3/Contents/i386-linux /usr/local/lib/vst3/ChowMatrix.vst3/Contents/armv7l-linux
 # aarch64
 # mv /usr/local/lib/vst3/ChowMatrix.vst3/Contents/x86_64-linux /usr/local/lib/vst3/ChowMatrix.vst3/Contents/aarch64-linux
+# i686
+# mv /usr/local/lib/vst3/ChowMatrix.vst3/Contents/i386-linux /usr/local/lib/vst3/ChowMatrix.vst3/Contents/i686-linux
 cp -a build/ChowMatrix_artefacts/Standalone/ChowMatrix /usr/local/bin
 
 tar czf /tmp/chowmatrix-1.0.0.armv7l.tar.gz /usr/local/lib/vst3/ChowMatrix.vst3 /usr/local/bin/ChowMatrix
@@ -37,6 +39,8 @@ mkdir -p /usr/local/lib/vst3
 cp -a Builds/LinuxMakefile/build/CHOWTapeModel.vst3 /usr/local/lib/vst3
 # aarch64
 # mv /usr/local/lib/vst3/CHOWTapeModel.vst3/Contents/arm64-linux /usr/local/lib/vst3/CHOWTapeModel.vst3/Contents/aarch64-linux
+# i686
+# mv /usr/local/lib/vst3/CHOWTapeModel.vst3/Contents/i386-linux /usr/local/lib/vst3/CHOWTapeModel.vst3/Contents/i686-linux
 mkdir -p /usr/local/lib/vst
 cp -a Builds/LinuxMakefile/build/CHOWTapeModel.so /usr/local/lib/vst
 rm -rf /usr/local/lib/lv2/CHOWTapeModel.lv2
