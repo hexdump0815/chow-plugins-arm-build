@@ -1,4 +1,4 @@
-# a newer cmake is required to build
+# a newer cmake is required to build- not needed for debian bullseye
 git clone https://github.com/Kitware/CMake.git
 cd CMake/
 ./bootstrap && make
@@ -14,13 +14,16 @@ git submodule update --init --recursive
 rm -rf /usr/local/lib/vst3/ChowMatrix.vst3
 mkdir -p /usr/local/lib/vst3
 cp -a build/ChowMatrix_artefacts/VST3/ChowMatrix.vst3 /usr/local/lib/vst3
-mv /usr/local/lib/vst3/ChowMatrix.vst3/Contents/i386-linux /usr/local/lib/vst3/ChowMatrix.vst3/Contents/armv7l-linux
-mv /usr/local/lib/vst3/ChowMatrix.vst3/Contents/x86_64-linux /usr/local/lib/vst3/ChowMatrix.vst3/Contents/aarch64-linux
+# armv7l
+# mv /usr/local/lib/vst3/ChowMatrix.vst3/Contents/i386-linux /usr/local/lib/vst3/ChowMatrix.vst3/Contents/armv7l-linux
+# aarch64
+# mv /usr/local/lib/vst3/ChowMatrix.vst3/Contents/x86_64-linux /usr/local/lib/vst3/ChowMatrix.vst3/Contents/aarch64-linux
 cp -a build/ChowMatrix_artefacts/Standalone/ChowMatrix /usr/local/bin
 
-tar czf /tmp/chowmatrix-1.0.0.x86_64.tar.gz /usr/local/lib/vst3/ChowMatrix.vst3 /usr/local/bin/ChowMatrix
-tar czf /tmp/chowmatrix-1.0.0.aarch64.tar.gz /usr/local/lib/vst3/ChowMatrix.vst3 /usr/local/bin/ChowMatrix
 tar czf /tmp/chowmatrix-1.0.0.armv7l.tar.gz /usr/local/lib/vst3/ChowMatrix.vst3 /usr/local/bin/ChowMatrix
+tar czf /tmp/chowmatrix-1.0.0.aarch64.tar.gz /usr/local/lib/vst3/ChowMatrix.vst3 /usr/local/bin/ChowMatrix
+tar czf /tmp/chowmatrix-1.0.0.i686.tar.gz /usr/local/lib/vst3/ChowMatrix.vst3 /usr/local/bin/ChowMatrix
+tar czf /tmp/chowmatrix-1.0.0.x86_64.tar.gz /usr/local/lib/vst3/ChowMatrix.vst3 /usr/local/bin/ChowMatrix
 
 # chowtapemodel
 apt-get install libasound2-dev libxcursor-dev libxinerama-dev libxrandr-dev freeglut3-dev libjack-jackd2-dev libcurl4-openssl-dev
@@ -32,7 +35,8 @@ cd Plugin/ && bash build_linux.sh
 rm -rf /usr/local/lib/vst3/CHOWTapeModel.vst3
 mkdir -p /usr/local/lib/vst3
 cp -a Builds/LinuxMakefile/build/CHOWTapeModel.vst3 /usr/local/lib/vst3
-mv /usr/local/lib/vst3/CHOWTapeModel.vst3/Contents/arm64-linux /usr/local/lib/vst3/CHOWTapeModel.vst3/Contents/aarch64-linux
+# aarch64
+# mv /usr/local/lib/vst3/CHOWTapeModel.vst3/Contents/arm64-linux /usr/local/lib/vst3/CHOWTapeModel.vst3/Contents/aarch64-linux
 mkdir -p /usr/local/lib/vst
 cp -a Builds/LinuxMakefile/build/CHOWTapeModel.so /usr/local/lib/vst
 rm -rf /usr/local/lib/lv2/CHOWTapeModel.lv2
@@ -41,6 +45,7 @@ cp -a Builds/LinuxMakefile/build/CHOWTapeModel.lv2 /usr/local/lib/lv2
 rm -f /usr/local/bin/CHOWTapeModel
 cp -a Builds/LinuxMakefile/build/CHOWTapeModel /usr/local/bin
 
-tar czf /tmp/CHOWTapeModel-2.7.0.x86_64.tar.gz /usr/local/lib/vst3/CHOWTapeModel.vst3 /usr/local/lib/vst/CHOWTapeModel.so /usr/local/lib/lv2/CHOWTapeModel.lv2 /usr/local/bin/CHOWTapeModel
-tar czf /tmp/CHOWTapeModel-2.7.0.aarch64.tar.gz /usr/local/lib/vst3/CHOWTapeModel.vst3 /usr/local/lib/vst/CHOWTapeModel.so /usr/local/lib/lv2/CHOWTapeModel.lv2 /usr/local/bin/CHOWTapeModel
 tar czf /tmp/CHOWTapeModel-2.7.0.armv7l.tar.gz /usr/local/lib/vst3/CHOWTapeModel.vst3 /usr/local/lib/vst/CHOWTapeModel.so /usr/local/lib/lv2/CHOWTapeModel.lv2 /usr/local/bin/CHOWTapeModel
+tar czf /tmp/CHOWTapeModel-2.7.0.aarch64.tar.gz /usr/local/lib/vst3/CHOWTapeModel.vst3 /usr/local/lib/vst/CHOWTapeModel.so /usr/local/lib/lv2/CHOWTapeModel.lv2 /usr/local/bin/CHOWTapeModel
+tar czf /tmp/CHOWTapeModel-2.7.0.i686.tar.gz /usr/local/lib/vst3/CHOWTapeModel.vst3 /usr/local/lib/vst/CHOWTapeModel.so /usr/local/lib/lv2/CHOWTapeModel.lv2 /usr/local/bin/CHOWTapeModel
+tar czf /tmp/CHOWTapeModel-2.7.0.x86_64.tar.gz /usr/local/lib/vst3/CHOWTapeModel.vst3 /usr/local/lib/vst/CHOWTapeModel.so /usr/local/lib/lv2/CHOWTapeModel.lv2 /usr/local/bin/CHOWTapeModel
